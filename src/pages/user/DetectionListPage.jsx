@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 function getInitialData() {
   let data = JSON.parse(localStorage.getItem('detectionList') || '[]');
-  if (data.length === 0) {
+
+  // 데이터가 비어있거나, 첫 번째 아이템에 id 필드가 없는 경우 재설정
+  if (data.length === 0 || data[0].id === undefined) {
     data = [
       { id: 1, title: "Confidential Deal Mail", checked: "X" },
       { id: 2, title: "Internal Report", checked: "O" },
@@ -11,6 +13,7 @@ function getInitialData() {
     ];
     localStorage.setItem('detectionList', JSON.stringify(data));
   }
+
   return data;
 }
 
