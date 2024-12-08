@@ -13,7 +13,7 @@ vite 테스트용 (해커톤 때 쓸만한 기능은 일단 넣어놓음)
 
 설치 필요 내용 (react 기준) 
 
-- npm create vite@latest <proj name> --template react
+- npm create vite@latest <proj name> -- --template react
 - cd <proj name>
 - npm install
 - npm install react-router-dom
